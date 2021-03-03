@@ -1,5 +1,5 @@
 
-# **重学JavaScript**
+# **复盘一下JavaScript**
 >通过版本控制复盘JavaScript知识点(测试中)  
 >记得更新脑图知识体系  
 >[涉及多媒体案例独立仓](demo_center.md)  
