@@ -6,6 +6,7 @@
 ## **一些说明**
 * [记得更新脑图知识体系](https://github.com/techpang666/techpang666.github.io/blob/main/core_libs/mindmap.md)  
 * [涉及多媒体案例独立仓](demo_center.md)  
+* [可以通过编辑器插件(Quokka.js)运行代码](https://marketplace.visualstudio.com/items?itemName=WallabyJs.quokka-vscode)  
 
 ------
 ![end](https://gitee.com/techpang/img_emoji_libs/raw/master/img_bed/markdown_images/end.jpg '富婆加我吧不想努力了')
