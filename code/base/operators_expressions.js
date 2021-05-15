@@ -83,3 +83,48 @@ console.log(Math.floor(-8.1)); /* -9 */
 // 随机数操作
 console.log(Math.random()); /* 0-1的随机小数 */
 console.log(Math.floor(Math.random() * 100)); /* 0-100的随机整数 向下取整 */
+
+/**
+ * @description 关系运算符和关系表达式
+ */
+
+/*
+
+=是赋值 ==才是等于
+
+!= 不等于
+!== 不全等(类型比较)
+== 等于
+=== 全等(类型比较)
+
+关系表达式的结果一定是布尔值
+
+*/
+
+console.log(1 == 1); /* true */
+console.log('1' == 1); /* true 只比较数值 不比较类型 */
+console.log('1' === 1); /* false 先比较数值 再比较类型 */
+
+/**
+ * @description 逻辑运算符和逻辑表达式
+ */
+
+/*
+
+&& 逻辑与(有一假为假)
+|| 逻辑或(有一真为真)
+! 逻辑非(取反)
+
+*/
+
+console.log(!false); /* true */
+console.log(!(2 > 1)); /* false */
+
+// 运算符优先级可以通过()来提升优先级
+let res = 3 + 2 - 5 * 0
+console.log(res); /* 5 */
+
+// 请说出以下代码的结果
+let num = 2
+let res = num++ * (++num + num - num--)
+console.log(res, num); /* dddd */
