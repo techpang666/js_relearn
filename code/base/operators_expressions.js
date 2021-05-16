@@ -126,5 +126,7 @@ console.log(res); /* 5 */
 
 // 请说出以下代码的结果
 let num = 2
-let res = num++ * (++num + num - num--)
-console.log(res, num); /* dddd */
+let res = num++ * (++num + num - num--) /* 3 * (2 + 3 - 2) */
+// 2 * (4 + 4 - 4) num = 3
+// 被小括号给误导了 这里是从左往右开始 括号就按照自操作的规矩来
+console.log(res, num); /* 8 3 */
