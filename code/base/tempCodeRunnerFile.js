@@ -1,4 +1,6 @@
 
-let num = 2
-let res = num++ * (++num + num - num--) /* 3 * (2 + 3 - 2) */
-console.log(res, num); /* dddd */
+let num = '10'
+console.log(typeof num); /* string */
+console.log(typeof parseInt(num)); /* number */
+parseInt(num)
+console.log(typeof num); /* string 不会改变原来变量的值 */
