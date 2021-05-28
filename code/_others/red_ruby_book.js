@@ -106,3 +106,64 @@ let声明之前的执行瞬间被称为(暂时性死区)
 在此阶段引用后面才声明的变量都会报错
 
 */
+
+/**
+ * @todo 210529
+ */
+
+var demo = 'dddd';
+console.log(window.demo); /* dddd */
+
+let age = 18;
+console.log(window.age); /* undefined */
+
+/*
+
+在全局作用域中
+
+let不会成为window对象的属性
+
+var会呢
+
+但let声明还是在全局作用域中发生的
+
+相应的变量会在页面的生命周期中生存
+
+避免syntaxerror 要确保没有重复声明一个变量
+
+*/
+
+// 第一个script标签
+
+var demo = 'dddd';
+let age = 18;
+
+// 第二个script标签
+
+var demo = 'test'; /* 正常执行 */
+let age = 18; /* Uncaught SyntaxError: Identifier 'age' has already been declared */
+
+/*
+
+由于var声明会被提升
+
+JavaScript引擎会在作用域顶部将多余的声明合并成一个声明
+
+let报错是因为它们一个全局作用域
+
+由于let的作用域是块 就检查不到前面是否有同名变量 也就不可能在没有声明的情况下声明它
+
+*/
+
+function test() {
+	let age = 18;
+	console.log(age); /* 18 */
+}
+
+function demo() {
+	let age = 18;
+	console.log(age); /* 18 */
+}
+
+test();
+demo();
