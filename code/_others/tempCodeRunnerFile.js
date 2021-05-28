@@ -1,1 +1,3 @@
-console.log(666);
+
+console.log(age);
+let age = 18
