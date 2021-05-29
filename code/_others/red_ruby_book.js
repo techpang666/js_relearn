@@ -167,3 +167,44 @@ function demo() {
 
 test();
 demo();
+
+/**
+ * @todo 210530
+ */
+
+// 第一个script标签
+
+// 全局作用域的声明
+let demo = 'dddd';
+// let age = 18
+console.log(demo);
+
+// 第二个script标签
+
+if (typeof demo === 'undefined') {
+	// 块级作用域的声明
+	let demo;
+	demo = 16;
+	console.log(demo); /* 这个if是false 所以这里不会执行 */
+}
+// 这里的demo不是if里面的demo 全局声明的demo
+demo = 'i is a demo';
+console.log(demo); /* i is a demo 全局作用域 */
+try {
+	console.log(age); /* 18 如果没有声明就会报错 */
+} catch (err) {
+	let age;
+	age = 20;
+	console.log(age);
+}
+// 这个age不是catch里面的age 全局变量 上面的是块级作用域的变量
+age = 12;
+console.log(age);
+
+/*
+
+let不能依赖条件声明模式
+
+这是个反模式 程序难以理解
+
+*/
