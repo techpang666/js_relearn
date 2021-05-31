@@ -102,3 +102,10 @@ function loadImageAsync(url) {
 		image.src = url;
 	});
 }
+
+// 测试代码(需要在html中运行)
+let imgUrl =
+	'https://cdn.pixabay.com/photo/2016/11/19/14/00/code-1839406_1280.jpg';
+loadImageAsync(imgUrl).then((res) => {
+	console.log(res);
+});
