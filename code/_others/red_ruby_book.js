@@ -268,3 +268,94 @@ for (let i = 0; i < 5; i++) {
 		console.log(i);
 	}, 0); /* 0 1 2 3 4 */
 }
+
+/**
+ * @todo 210601
+ */
+
+/**
+ * @description const声明
+ */
+
+// const和let的区别在于声明变量的时候 必须赋值
+
+// 尝试修改const声明的变量会报错
+const age = 18;
+age = 19; /* TypeError: Assignment to constant variable */
+
+// 不允许重复声明
+const age = 18;
+const age = 20; /* SyntaxError: Identifier 'age' has already been declared */
+
+const age = 18;
+if (true) {
+	// 块级作用域
+	const age = 20;
+}
+console.log(age);
+
+const person = {};
+// 给person对象加个age属性
+person.age = 18;
+console.log(person);
+console.log(person.age);
+
+/*
+
+const声明的限制只限于它指向的变量引用
+
+如果这个引用是个对象
+
+修改对象内部的属性不属于违反const的限制
+
+*/
+
+for (
+	const i = 0;
+	i < 10;
+	i++
+) {} /* TypeError: Assignment to constant variable */
+
+/*
+
+引擎会给for循环中的let声明分别创建个独立的变量实例
+
+虽然const和let相似 但是不能用const声明迭代变量(因为这个变量会自增 违反了const的给常量赋值)
+
+*/
+
+// 如果想用const声明一个不会被修改的变量 也可以(每次迭代都是创建一个新的变量)
+
+let i = 0;
+for (const j = 7; i < 5; i++) {
+	// 每次都是新的变量
+	console.log(j); /* 7 7 7 7 7 */
+}
+
+// for-in循环
+for (const key in { a: 1, b: 2 }) {
+	console.log(key); /* a b */
+}
+
+// for-of循环
+for (const value of [1, 2, 3, 4, 5]) {
+	console.log(value); /* 1 2 3 4 5 */
+}
+
+/**
+ * @description 声明风格及最佳实践
+ */
+
+/*
+
+不使用var
+
+有助于提升代码质量 变量有了明确的作用域/声明位置/不变的值
+
+const优先/let次之
+
+使用const声明让浏览器运行时强制保持变量不变 让静态代码分析工具提前发现不合法的赋值操作
+
+优先使用const声明变量 需要修改变量的时候再改为let
+
+*/

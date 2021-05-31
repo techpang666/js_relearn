@@ -1,4 +1,4 @@
 
-for(let i = 0;i < 5; i++) {
-	setTimeout(() => {console.log(i);},0) /* 5 5 5 5 5 */
+for (const value of [1, 2, 3, 4, 5]) {
+	console.log(value);
 }
