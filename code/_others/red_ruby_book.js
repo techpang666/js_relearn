@@ -208,3 +208,63 @@ let不能依赖条件声明模式
 这是个反模式 程序难以理解
 
 */
+
+/**
+ * @todo 210531
+ */
+
+/**
+ * @description for循环的let声明
+ */
+
+// var定义的迭代变量
+for (var i = 0; i < 5; i++) {
+	console.log(i);
+}
+
+console.log(i); /* 5 */
+
+// let定义的迭代变量
+for (let i = 0; i < 5; i++) {
+	console.log(i);
+}
+
+console.log(i); /* ReferenceError: i is not defined */
+
+/*
+
+let之前 for循环定义的迭代变量会渗透到循环体外面
+
+也就是外面可以log迭代变量i
+
+改成let后 这个问题就不存在了
+
+因为let的作用域在循环块内
+
+*/
+
+for (var i = 0; i < 5; i++) {
+	setTimeout(() => {
+		console.log(i);
+	}, 0); /* 5 5 5 5 5 */
+}
+
+/*
+
+之所以是这个输出 是因为退出循环的时候 迭代变量保存的是最终导致循环退出的值(5)
+
+在这之后执行超时逻辑的时候 i都是同一个变量 所以就是输出同一个最终值
+
+在使用let的时候 引擎会给每个迭代循环声明一个新的迭代变量
+
+每个setTimeout引用的都是不同的变量实例 所以log是我们的期望值
+
+这种每次迭代都声明一个独立变量实例的行为都适用于所有风格的for循环 包括for-in/for-of循环
+
+*/
+
+for (let i = 0; i < 5; i++) {
+	setTimeout(() => {
+		console.log(i);
+	}, 0); /* 0 1 2 3 4 */
+}
