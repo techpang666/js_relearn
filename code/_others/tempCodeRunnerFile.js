@@ -1,4 +1,15 @@
 
-for (const value of [1, 2, 3, 4, 5]) {
-	console.log(value);
+function toCamelCase(str) {
+	if (typeof str !== 'string') {
+		return str;
+	}
+	const s =  str
+		.split('_')
+		.map((item) => item[0].toUpperCase() + item.substr(2))
+		.join('');
+    return s[0].toLowerCase() + s.substr(1)
 }
+
+let testStr = 'if_you_are_my_world';
+// console.log(testStr.split('_'));
+console.log(toCamelCase(testStr));
