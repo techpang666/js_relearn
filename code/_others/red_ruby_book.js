@@ -359,3 +359,90 @@ const优先/let次之
 优先使用const声明变量 需要修改变量的时候再改为let
 
 */
+
+/**
+ * @todo 210602
+ */
+
+/**
+ * @description 数据类型
+ */
+
+/*
+
+6种简单数据类型(原始类型)
+- undefined
+- null
+- boolean
+- number
+- string
+- symbol(es6新增)
+- object(复杂数据类型)
+
+object是一种无序名值对的集合
+
+ECMA的数据类型很灵活
+
+一种数据类型可以当作多种数据类型使用
+
+*/
+
+/**
+ * @description typeof操作符
+ */
+
+// ECMA的类型系统是松散的 需要一种手段确定任意变量的数据类型
+
+// 使用typeof操作符会返回对应的类型字符串
+
+/*
+
+- object 表示值为对象(不是函数)或者null
+- function 表示值为函数
+- symbol 表示值为符号
+
+严格来说 函数被认为是对象 不代表一种数据类型
+
+但是 函数也有自己特殊的属性 所以就通过typeof操作符来区分函数和其他对象
+
+null是一个对空对象的引用
+
+*/
+
+let message = 'dddd';
+console.log(typeof message);
+console.log(typeof 18);
+
+// typeof操作符不是函数 不需要参数(但可以使用参数)
+
+console.log(typeof null); /* object */
+
+/**
+ * @description undefined类型
+ */
+
+/*
+
+只有一个值 就是undefined
+
+使用var/let声明变量没有初始化的时候
+
+就是给变量赋值了undefined
+
+字面量undefined主要用于比较
+
+这个特殊值是为了明确空对象指针(null)和未初始化变量的区别
+
+*/
+
+let demo;
+// 显式的赋值undefined是没必要的 没有初始化的变量都是undefined
+let demo = undefined;
+console.log(demo == undefined); /* true */
+// 也是全等的
+console.log(demo === undefined); /* true */
+
+let demo;
+let age;
+console.log(demo); /* undefined */
+console.log(age); /* undefined */
