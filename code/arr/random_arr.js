@@ -1,3 +1,7 @@
+/**
+ * @description 用递归实现数组长度为5且元素的随机数在2-32间不重复的值
+ */
+
 let arr = new Array(5);
 let num = randomNumber();
 let i = 0;
