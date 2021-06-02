@@ -1,5 +1,9 @@
 
-let demo = undefined
-let age
-console.log(demo);
-console.log(age);
+// 已经声明的变量
+let demo;
+// 没有声明的变量
+// let age;
+console.log(typeof demo); /* undefined */
+console.log(typeof age); /* undefined */
+
+

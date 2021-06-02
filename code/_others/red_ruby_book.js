@@ -442,7 +442,62 @@ console.log(demo == undefined); /* true */
 // 也是全等的
 console.log(demo === undefined); /* true */
 
+/**
+ * @todo 210603
+ */
+
+// 这个变量被声明了 只是值为undefined
 let demo;
-let age;
+// 没有声明过这个变量
+// let age;
 console.log(demo); /* undefined */
-console.log(age); /* undefined */
+console.log(age); /* ReferenceError: age is not defined */
+
+/*
+
+输出一个没有声明过的变量会报错
+
+对于没有声明的变量 只能执行一个操作 就是对它调用typeof
+
+也可以调用delete 不过没啥用 严格模式下还会报错
+
+*/
+
+console.log(typeof age); /* undefined */
+// 没啥用
+console.log(delete age); /* true */
+
+// 已经声明的变量
+let demo;
+// 没有声明的变量
+// let age;
+console.log(typeof demo); /* undefined */
+console.log(typeof age); /* undefined */
+
+/*
+
+无论声明还是未声明的 都是返回undefined
+
+逻辑上是对的 虽然这两个变量存在根本性上的差异
+
+但它们都无法执行实际操作
+
+*/
+
+/**
+ * @description 注意点
+ */
+
+/*
+
+即使未初始化的变量会被自动赋值undefined
+
+但我们建议声明变量的时候同时初始化
+
+这样当typeof返回undefined的时候 你就会知道那是因为给的变量没有声明 而不是没有初始化
+
+undefined是个假值 其他可能的值也是假值
+
+所以 一定要明确自己想要检测的就是undefined这个字面值 而不是假值
+
+*/
