@@ -1,9 +1,10 @@
 
-// 已经声明的变量
-let demo;
-// 没有声明的变量
-// let age;
-console.log(typeof demo); /* undefined */
-console.log(typeof age); /* undefined */
+let demo = null
+let age /* 这个是自动赋值undefined */
+if (!demo) {
+	console.log(666);
+}
 
-
+if (!age) {
+	console.log(666);
+}

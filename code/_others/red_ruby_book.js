@@ -500,4 +500,75 @@ undefined是个假值 其他可能的值也是假值
 
 所以 一定要明确自己想要检测的就是undefined这个字面值 而不是假值
 
+作为条件判断的时候 undefined为false
+
 */
+
+/**
+ * @todo 210604
+ */
+
+// 被声明了 值为undefined
+let demo
+// 没有声明的变量
+// age
+
+if (demo) {
+	console.log(666); /* 条件为false 所以不会执行 */
+}
+
+if (!demo) {
+	console.log(666); /* 取反了 条件为true 所以会执行 */
+}
+
+if (age) {
+	console.log(666); /* 找不到age这个变量 报错 */
+}
+
+/**
+ * @description null类型
+ */
+
+/*
+
+null也只有一个值 就是null
+
+逻辑上 null表示为空对象指针
+
+所以typeof的时候会输出object
+
+*/
+
+let demo = null
+console.log(typeof demo); /* object */
+
+let car = null
+if (car != null) {
+	console.log(666);
+}
+
+/*
+
+定义要保存对象值的变量 建议使用null来初始化
+
+这样只要检查这个变量是不是null就知道这个变量是不是用于一个对象的引用
+
+null也是一个假值 所以要明确自己检测的是null这个字面值 而不是假值
+
+*/
+
+// undefined是由null派生出来的 所以ECMA262定义为表面相等 不是全等
+console.log(null == undefined); /* true */
+
+// == 这个操作符会为了比较而转换它的操作数
+
+// 作条件判断的时候 为false
+let demo = null
+let age /* 这个是自动赋值undefined */
+if (!demo) {
+	console.log(666); /* 666 */
+}
+
+if (!age) {
+	console.log(666); /* 666 */
+}
