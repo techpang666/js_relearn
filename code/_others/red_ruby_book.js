@@ -274,7 +274,7 @@ for (let i = 0; i < 5; i++) {
  */
 
 /**
- * @description const声明
+ * @description const关键字
  */
 
 // const和let的区别在于声明变量的时候 必须赋值
@@ -418,7 +418,7 @@ console.log(typeof 18);
 console.log(typeof null); /* object */
 
 /**
- * @description undefined类型
+ * @description Undefined类型
  */
 
 /*
@@ -526,7 +526,7 @@ if (age) {
 }
 
 /**
- * @description null类型
+ * @description Null类型
  */
 
 /*
@@ -572,3 +572,76 @@ if (!demo) {
 if (!age) {
 	console.log(666); /* 666 */
 }
+
+/**
+ * @todo 210605
+ */
+
+/**
+ * @description Boolean类型
+ */
+
+/*
+
+true不等于1
+
+false不等于0
+
+布尔值字面量区分大小写 True是有效标识符 不是布尔值
+
+通过Boolean()转型函数 将其他数据类型转为布尔值
+
+这些情况输出true
+非空字符串/非零数值(包括无穷值)/任意对象/(N/A)不存在
+
+这些情况输出false
+空字符串/0/NaN/null/undefined
+
+*/
+
+let demo = 'dddd'
+let res = Boolean(demo)
+console.log(res); /* true */
+
+let demo = 'dddd'
+if (demo) {
+	console.log(666);
+}
+
+// NaN取反是true
+if (!NaN) {
+	console.log(666); /* true */
+}
+
+/**
+ * @description Number类型
+ */
+
+/*
+
+使用IEEE754格式表示整数/浮点值(其他语言叫做双精度值)
+
+不同的数值类型有对应的字面量格式
+
+可能存在整零/负零 在所有情况下都被认为是等同的
+
+*/
+
+// 最基本的数值字面量格式是十进制 八进制/十六进制的数值都会转为十进制
+let intNum = 55
+console.log(intNum); /* 55 */
+
+// 八进制(8为基数)前缀为0 后面是八进制数字(0-7) 八进制在严格模式下是无效的 会语法错误
+// 如果字面量的数字超出范围会忽略掉前缀0 后面的数字被当作十进制处理
+let octalNum = 070
+console.log(octalNum); /* 八进制的56 */
+// let octalNum = 079
+console.log(octalNum); /* 无效的八进制 当作79处理 */
+let octalNum = 08
+console.log(octalNum); /* 无效的八进制 当作8处理 */
+
+// 十六进制(16为基数)前缀为0x(区分大小写) 后面跟着0-9/A-F(大小写都可以)
+let hexNum = 0xA
+console.log(hexNum); /* 十六进制的10 */
+let hexNum = 0x1f
+console.log(hexNum); /* 十六进制的31 */
