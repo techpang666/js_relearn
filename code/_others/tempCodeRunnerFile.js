@@ -1,3 +1,1 @@
-
-let hexNum = 0x1f
-console.log(hexNum);
+console.log(0.15 + 0.25);
