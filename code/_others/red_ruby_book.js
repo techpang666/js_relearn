@@ -741,21 +741,53 @@ console.log(isNaN('1')); /* false 转换为1 */
 console.log(isNaN('demo')); /* true 转换失败 */
 console.log(isNaN(true)); /* false true可以表示为1 */
 
+/**
+ * @description 数值转换
+ */
+
+/*
+
+Number()是转型函数 可以任意数据类型
+
+parseInt()和parseFloat()用于将字符串转为数值
+
+*/
+
+console.log(Number('1'));
+console.log(parseFloat('1'));
+console.log(parseInt('1'));
+
+// Number()的转换规则
+console.log(Number(true)); /* 1 */
+console.log(Number(false)); /* 0 */
+// null为0
+console.log(Number(null)); /* 0 */
+// undefined转换成NaN
+console.log(Number(undefined)); /* NaN */
+
+// 字符串转换规则
+console.log(Number('1')); /* 1 */
+// 会忽略掉前面的0
+console.log(Number('001')); /* 1 */
+// 会忽略掉前面的0
+console.log(Number('1.1')); /* 1.1 */
+// 十六进制会转换对应的十进制
+console.log(Number('0xf')); /* 15 */
+// 空字符串会转换成0
+console.log(Number('')); /* 0 */
+// 转换失败 为NaN
+console.log(Number('demo')); /* NaN */
+
+let demo = {a:1}
+console.log(demo); /* { a: 1 } */
+console.log(demo.toString()); /* [object Object] */
+console.log(demo.valueOf()); /* { a: 1 } */
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
+console.log(666);
 
 /**
  * @description 一些盲区
