@@ -1,1 +1,6 @@
-console.log(0.15 + 0.25);
+
+console.log(isNaN(NaN));
+console.log(isNaN(1));
+console.log(isNaN('1'));
+console.log(isNaN('demo'));
+console.log(isNaN(true));

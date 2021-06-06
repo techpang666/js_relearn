@@ -677,3 +677,104 @@ console.log(num); /* 0.0000315 */
 // 这是拿不到0.3的 之所以这样 是因为使用了IEEE754数值 这种错误并非ECMA独有
 console.log(0.1 + 0.2); /* 0.30000000000000004 */
 console.log(0.15 + 0.25); /* 0.4 */
+
+/**
+ * @description 值的范围
+ */
+
+/*
+
+ECMA将最大/最小的值保存在MAX_VALUE/MIN_VALUE中
+
+超出JavaScript可以表示的范围的数值 会转换成Infinity
+
+这时候不会再进行任何计算
+
+因为Infinity没有可用于计算的数值表示形式
+
+*/
+
+console.log(Number.MAX_VALUE); /* 1.7976931348623157e+308 */
+console.log(Number.MIN_VALUE); /* 5e-324 */
+
+// 这两个属性保存的就是-Infinity和Infinity
+console.log(Number.NEGATIVE_INFINITY); /* -Infinity */
+console.log(Number.POSITIVE_INFINITY); /* Infinity */
+
+// 可以通过isFinite()函数判断一个值是不是有限大
+let res = isFinite(1+1)
+console.log(res); /* true */
+let num = Number.MAX_VALUE + Number.MAX_VALUE
+console.log(isFinite(num)); /* false */
+
+/**
+ * @description NaN
+ */
+
+/*
+
+NaN表示不是数值
+
+在本来要返回数值的操作失败了(不是抛出错误)
+
+*/
+
+// 0 +0 -0相除都会NaN
+console.log(0/0); /* NaN */
+console.log(-0/+0); /* NaN */
+
+// 分子不是0 分母是0的时候 会返回正负无穷
+console.log(5/0); /* Infinity */
+console.log(5/-0); /* -Infinity */
+
+// 涉及到NaN的操作都会返回NaN
+console.log(NaN/10); /* NaN */
+
+// NaN不等于包括NaN在内的任何值
+console.log(NaN == NaN); /* false */
+console.log(NaN === NaN); /* false */
+
+// isNaN函数用于判断是不是数值 会尝试转换为数值
+console.log(isNaN(NaN)); /* true */
+console.log(isNaN(1)); /* false */
+console.log(isNaN('1')); /* false 转换为1 */
+console.log(isNaN('demo')); /* true 转换失败 */
+console.log(isNaN(true)); /* false true可以表示为1 */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**
+ * @description 一些盲区
+ */
+
+/**
+ * @description isNaN()可以用于测试对象
+ */
+
+/*
+
+先调用对象的valueOf()
+
+确定返回的值是否可以转为数值
+
+不能的时候 调用toString()方法并测试返回值
+
+*/
+
+
+
+
