@@ -841,3 +841,67 @@ console.log(parseInt('00000078')); /* 78 */
 console.log(parseFloat('0xf')); /* 0 */
 // 如果小数点后面只有一个0 会返回整数
 console.log(parseFloat('22.0')); /* 22 */
+
+/**
+ * @todo 210609
+ */
+
+/**
+ * @description String类型
+ */
+
+/*
+
+可以单双反引号表示
+
+开头和结尾的引号必须一样的
+
+*/
+
+/**
+ * @description 字符字面量
+ */
+
+/*
+
+用于表示非打印字符
+
+\n 换行
+\\ 反斜杠
+\' 单引号
+
+*/
+
+let demo = 'dddd\'enen\''
+console.log(demo); /* dddd'enen' */
+console.log(demo.length); /* 10 */
+
+// 转义序列 表示一个字符 所以长度为10
+
+// 如果包含双字节字符 那么返回的长度可能不是准确的字符数
+
+let demo = 'java'
+demo = demo + 'script'
+console.log(demo); /* javascript */
+
+// 字符串是不可变的 要修改只能销毁原始字符串 保存新值到这个变量中
+
+// 先分配一个可以容纳新字符串的空间 然后填充上'java'和'script' 最后销毁它们 因为没用了
+
+// 这些都是后台处理的 这也是早期浏览器在拼接字符串慢的原因
+
+/**
+ * @description 转换为字符串
+ */
+
+// 两种方式 toString()除了null/undefined都有的方法
+let age = 18
+console.log(age); /* 18 */
+let res = age.toString()
+console.log(res); /* '18' */
+
+// toString()可以接收底数参数 可以得到数值的二进制等有效字符串
+let num = 10
+console.log(num.toString()); /* 10 */
+console.log(num.toString(2)); /* 1010 */
+console.log(num.toString(8)); /* 12 */

@@ -1,6 +1,7 @@
 
-let demo = {a:1}
-console.log(demo); /* { a: 1 } */
-console.log(demo.toString()); /* [object Object] */
-console.log(toString.call(demo)); /* [object Object] */
-console.log(demo.toString() === toString.call(demo));
+// toString()可以接收底数参数 可以得到数值的二进制等有效字符串
+let num = 10
+console.log(num.toString());
+console.log(num.toString(2));
+console.log(num.toString(8));
+
