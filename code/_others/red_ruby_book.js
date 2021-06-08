@@ -754,8 +754,8 @@ parseInt()和parseFloat()用于将字符串转为数值
 */
 
 console.log(Number('1'));
-console.log(parseFloat('1'));
 console.log(parseInt('1'));
+console.log(parseFloat('1'));
 
 // Number()的转换规则
 console.log(Number(true)); /* 1 */
@@ -781,6 +781,7 @@ console.log(Number('demo')); /* NaN */
 let demo = {a:1}
 console.log(demo); /* { a: 1 } */
 console.log(demo.toString()); /* [object Object] */
+console.log(toString.call(demo)); /* [object Object] */
 console.log(demo.valueOf()); /* { a: 1 } */
 console.log(demo.valueOf() === demo); /* true */
 
@@ -789,6 +790,57 @@ console.log(demo.valueOf() === demo); /* true */
  */
 
 console.log('今天有事 签到一下 溜溜球');
+
+/**
+ * @todo 210608
+ */
+
+/*
+
+parseInt()函数会忽略字符串前面的空格 如果第一个字符不是数值/加减符号 会NaN
+
+包括空字符串 在Number()中是输出0的
+
+如果碰到非数值字符 会被打断 包括小数点
+
+也能识别不同的整数格式 例如八进制/十六进制
+
+*/
+
+// 忽略非数值字符
+console.log(parseInt('1234dddd')); /* 1234 */
+console.log(parseInt('22.4')); /* 22 */
+
+// parseInt()还可以接受第二个参数用于指定底数(进制数) 然后可以忽略0x/0这些字符串
+console.log(parseInt('10', 2)); /* 2 */
+console.log(parseInt('10', 8)); /* 8 */
+console.log(parseInt('10', 10)); /* 10 */
+console.log(parseInt('10', 16)); /* 16 */
+
+// 建议解析进制数的时候 传入第二个参数
+
+// parseFloat()和parseInt()类似 如果解析到第二个小数点 后面的会被忽略掉
+console.log(parseFloat('22.4.3')); /* 22.4 */
+// parseFloat会始终忽略掉开头的0 只能解析十进制 所以不能指定底数
+console.log(parseFloat('00000078')); /* 78 */
+// parseInt也会忽略掉前面的0 不过可以识别进制数格式
+console.log(parseInt('00000078')); /* 78 */
+// 十六进制会返回0
+console.log(parseFloat('0xf')); /* 0 */
+// 如果小数点后面只有一个0 会返回整数
+console.log(parseFloat('22.0')); /* 22 */
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
