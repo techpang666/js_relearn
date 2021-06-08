@@ -778,18 +778,30 @@ console.log(Number('')); /* 0 */
 // 转换失败 为NaN
 console.log(Number('demo')); /* NaN */
 
-let demo = {a:1}
-console.log(demo); /* { a: 1 } */
-console.log(demo.toString()); /* [object Object] */
-console.log(toString.call(demo)); /* [object Object] */
-console.log(demo.valueOf()); /* { a: 1 } */
-console.log(demo.valueOf() === demo); /* true */
-
 /**
  * @todo 210607
  */
 
-console.log('今天有事 签到一下 溜溜球');
+/**
+ * @description isNaN()可以用于测试对象
+ */
+
+/*
+
+先调用对象的valueOf() 确定返回的值是否可以转为数值(因为valueOf()是返回自身的)
+
+不能的时候是NaN 调用toString()方法并返回值
+
+*/
+
+let demo = { a: 1 }
+console.log(demo); /* { a: 1 } */
+console.log(demo.valueOf()); /* { a: 1 } */
+console.log(demo.toString()); /* [object Object] */
+console.log(toString.call(demo)); /* [object Object] */
+// 嗯哼 全等一样的东西
+console.log(demo.valueOf() === demo); /* true */
+console.log(demo.toString() === toString.call(demo)); /* true */
 
 /**
  * @todo 210608
@@ -829,41 +841,3 @@ console.log(parseInt('00000078')); /* 78 */
 console.log(parseFloat('0xf')); /* 0 */
 // 如果小数点后面只有一个0 会返回整数
 console.log(parseFloat('22.0')); /* 22 */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-console.log(666);
-
-/**
- * @description 一些盲区
- */
-
-/**
- * @description isNaN()可以用于测试对象
- */
-
-/*
-
-先调用对象的valueOf()
-
-确定返回的值是否可以转为数值
-
-不能的时候 调用toString()方法并测试返回值
-
-*/
-
-
-
-
