@@ -1,7 +1,10 @@
 
-// toString()可以接收底数参数 可以得到数值的二进制等有效字符串
-let num = 10
-console.log(num.toString());
-console.log(num.toString(2));
-console.log(num.toString(8));
+let value1 = 10
+let value2 = true
+let value3 = null
+let value4 = undefined
 
+console.log(String(value1)); /* 10 */
+console.log(String(value2)); /* true */
+console.log(String(value3)); /* null */
+console.log(String(value4)); /* undefined */

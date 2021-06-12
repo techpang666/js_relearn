@@ -910,6 +910,28 @@ console.log(num.toString(8)); /* 12 */
  * @todo 210610
  */
 
+/*
+
+如果不确定值是不是null和undefined
+
+可以使用String()转型函数
+
+如果值有toString()方法 则调用方法并返回结果
+
+如果是null和undefined 则返回对应的字面量文本
+
+*/
+
+let value1 = 10
+let value2 = true
+let value3 = null
+let value4 = undefined
+
+console.log(String(value1)); /* 10 */
+console.log(String(value2)); /* true */
+console.log(String(value3)); /* null */
+console.log(String(value4)); /* undefined */
+
 /**
  * @description 可能停服个几天
  */
