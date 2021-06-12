@@ -937,6 +937,34 @@ console.log(String(value4)); /* undefined */
  */
 
 /**
+ * @description 模板字面量
+ */
+
+// 保留换行字符 可以跨行定义字符串
+
+let testStr = 'if you are\nmy world';
+
+let testTemplate = `if you are
+my world`;
+
+console.log(testStr);
+console.log(testTemplate);
+console.log(testStr === testTemplate); /* true */
+
+let pageHTML = `
+<div>
+	<span>demo</span>
+</div>
+`
+
+console.log(pageHTML);
+
+// 模板字面量会保持反引号内部的空格(这个字符串有两个空格)
+console.log(pageHTML.length); /* 33 */
+// 这个字符串以换行符开头
+console.log(pageHTML[0] === '\n'); /* true */
+
+/**
  * @todo 210612
  */
 

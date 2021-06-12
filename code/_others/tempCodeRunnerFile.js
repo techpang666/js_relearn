@@ -1,10 +1,11 @@
 
-let value1 = 10
-let value2 = true
-let value3 = null
-let value4 = undefined
+let pageHTML = `<div>
+	<span>demo</span>
+</div>
+`
 
-console.log(String(value1)); /* 10 */
-console.log(String(value2)); /* true */
-console.log(String(value3)); /* null */
-console.log(String(value4)); /* undefined */
+console.log(pageHTML);
+
+// 模板字面量会保持反引号内部的空格 在换行符后有25个空格符
+console.log(pageHTML.length); /* 33 */
+console.log(pageHTML[0] === '\n'); /* true */
