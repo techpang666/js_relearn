@@ -933,10 +933,6 @@ console.log(String(value3)); /* null */
 console.log(String(value4)); /* undefined */
 
 /**
- * @description 可能停服个几天
- */
-
-/**
  * @todo 210611
  */
 
