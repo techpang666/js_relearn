@@ -969,6 +969,27 @@ console.log(pageHTML[0] === '\n'); /* true */
  */
 
 /**
+ * @description 字符串插值
+ */
+
+/*
+
+模板字面量的一个特性是支持字符串插值 它不是字符串 特殊的JavaScript句法表达式 求值后得到的是字符串
+
+插入的变量会从最近的作用域中取值
+
+插入的值都会通过toString()强制转型为字符串
+
+*/
+
+let value = 5
+let testTemplate = `test: ${value}`
+console.log(testTemplate); /* test: 5 */
+
+// 嵌套的模板字符串无须转义
+console.log(`hello, ${`world`}`); /* hello, world */
+
+/**
  * @todo 210613
  */
 
