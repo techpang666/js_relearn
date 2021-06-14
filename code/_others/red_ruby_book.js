@@ -989,6 +989,26 @@ console.log(testTemplate); /* test: 5 */
 // 嵌套的模板字符串无须转义
 console.log(`hello, ${`world`}`); /* hello, world */
 
+// 将表达式转换为字符串的时候也会调用toString()
+let demo = {toString:() => 'test'}
+console.log(`${demo}`); /* test */
+
+// 也可以调用函数和方法
+function demo(params) {
+	return `${params.toString()}`
+}
+console.log(`${demo('hello')}`);
+
+// 也可以插入之前的值
+let demo = ''
+function append() {
+	demo = `${demo}test`
+	console.log(demo);
+}
+append() /* test */
+append() /* testtest */
+append() /* testtesttest */
+
 /**
  * @todo 210613
  */
