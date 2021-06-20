@@ -1033,27 +1033,3 @@ let tagRes = simpleTag`${a} + ${b} = ${a + b}`
 
 console.log(res);
 console.log(tagRes);
-
-/**
- * @todo 210614
- */
-
-/**
- * @todo 210615
- */
-
-/**
- * @todo 210616
- */
-
-/**
- * @todo 210617
- */
-
-/**
- * @todo 210618
- */
-
-/**
- * @todo 210619
- */
