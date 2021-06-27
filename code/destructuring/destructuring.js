@@ -20,6 +20,5 @@ console.log(y); /* undefined */
 console.log(z); /* [] */
 
 // 解构不成功 会undefined
-
 let [demo] = []
 console.log(demo); /* undefined */
