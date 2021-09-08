@@ -5,5 +5,7 @@ const arr = [
   {id: 3, name: '草莓', state: true, price: 10, count: 3},
 ]
 
-const res = arr.every(item => item.state)
+// 都满足条件才是true 判断是否全选
+const res = arr.every(item => {return item.state})
+
 console.log(res);

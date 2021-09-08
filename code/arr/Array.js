@@ -41,6 +41,8 @@ const arr = [
 ]
 
 // 都满足条件才是true 判断是否全选
-const res = arr.every(item => item.state)
+
+// 加括号需要return出去
+const res = arr.every(item => {return item.state})
 
 console.log(res);
